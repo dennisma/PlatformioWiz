@@ -13,6 +13,8 @@ import os
 # The script starts by importing the necessary libraries and defining a function to fetch the ZIP file.
 # It then creates a tkinter window with an image, a label, an entry field for the URL, and a button to run the wizard.
 
+# The fetch_zip_file function is called when the button is clicked, and it handles the downloading and extraction of the ZIP file.
+# The script also includes a placeholder for generating and saving QR codes, but this functionality is not implemented.
 def fetch_zip_file():
     # Try to get the ZIP file
     global url
