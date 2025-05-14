@@ -5,6 +5,13 @@ import requests
 import zipfile
 import os
 
+# This script is a simple GUI application that allows the user to download a ZIP file from a given URL,
+# extract its contents, and open the extracted folder in Visual Studio Code.
+# It uses the tkinter library for the GUI, requests for HTTP requests, and zipfile for handling ZIP files.
+# The script also includes a placeholder for generating and saving QR codes, but this functionality is not implemented.
+# The script is designed to be run as a standalone application.
+# The script starts by importing the necessary libraries and defining a function to fetch the ZIP file.
+# It then creates a tkinter window with an image, a label, an entry field for the URL, and a button to run the wizard.
 
 def fetch_zip_file():
     # Try to get the ZIP file
