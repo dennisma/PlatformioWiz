@@ -41,13 +41,21 @@ def fetch_zip_file():
         # Save dataset to file
         filename =  "srbots_client.zip"
         print('Status 200, OK')
-        open(filename, 'wb').write(response.content)
         
-        with zipfile.ZipFile(filename, 'r') as zip_ref:
-            zip_ref.extractall()
+        try:
+            open(filename, 'wb').write(response.content)
             
-        os.chdir("srbots_client-main")
-        os.system("code .")
+            with zipfile.ZipFile(filename, 'r') as zip_ref:
+                zip_ref.extractall()
+            
+            last_directory = os.path.basename(folder_path)
+            os.rename("srbots_client-main", last_directory)
+
+            os.remove(filename)    
+            os.chdir(last_directory)
+            os.system("code .")
+        except Exception as e:
+            print(f"An error occurred: {e}")
         
     else:
         print('ZIP file request not successful!.')
